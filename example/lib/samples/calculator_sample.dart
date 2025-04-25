@@ -1,6 +1,8 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class CalculatorSample extends StatefulWidget {
+  const CalculatorSample({super.key});
+
   @override
   createState() => _CalculatorSampleState();
 }
@@ -49,7 +51,7 @@ class CalcButton {
 class WidgetCalcButton extends StatelessWidget {
   final CalcButton button;
 
-  WidgetCalcButton(this.button);
+  const WidgetCalcButton(this.button, {super.key});
 
   Color _textColor(BuildContext context) {
     if (button.backgroundAccent) {

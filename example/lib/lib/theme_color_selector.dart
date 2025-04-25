@@ -5,10 +5,10 @@ import 'color_selector.dart';
 class ThemeColorSelector extends StatefulWidget {
   final BuildContext? customContext;
 
-  ThemeColorSelector({this.customContext});
+  const ThemeColorSelector({super.key, this.customContext});
 
   @override
-  _ThemeColorSelectorState createState() => _ThemeColorSelectorState();
+  createState() => _ThemeColorSelectorState();
 }
 
 class _ThemeColorSelectorState extends State<ThemeColorSelector> {
@@ -21,8 +21,7 @@ class _ThemeColorSelectorState extends State<ThemeColorSelector> {
         color: NeumorphicTheme.baseColor(widget.customContext ?? context),
         onColorChanged: (color) {
           setState(() {
-            NeumorphicTheme.update(widget.customContext ?? context,
-                (current) => current!.copyWith(baseColor: color));
+            NeumorphicTheme.update(widget.customContext ?? context, (current) => current!.copyWith(baseColor: color));
           });
         },
       ),

@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 import 'back_button.dart';
@@ -8,7 +10,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
 
   static const double kToolbarHeight = 110.0;
 
-  const TopBar({this.title = "", this.actions});
+  const TopBar({super.key, this.title = "", this.actions});
 
   @override
   Widget build(BuildContext context) {

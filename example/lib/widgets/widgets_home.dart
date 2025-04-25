@@ -17,6 +17,8 @@ import 'slider/widget_slider.dart';
 import 'switch/widget_switch.dart';
 
 class WidgetsHome extends StatelessWidget {
+  const WidgetsHome({super.key});
+
   Widget _buildButton({String? text, VoidCallback? onClick}) {
     return NeumorphicButton(
       margin: EdgeInsets.only(bottom: 12),
@@ -30,8 +32,8 @@ class WidgetsHome extends StatelessWidget {
         ),
         shape: NeumorphicShape.flat,
       ),
-      child: Center(child: Text(text ?? '')),
       onPressed: onClick,
+      child: Center(child: Text(text ?? '')),
     );
   }
 

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
@@ -8,8 +10,7 @@ class ColorSelector extends StatelessWidget {
   final double height;
   final double width;
 
-  const ColorSelector(
-      {this.height = 40, this.width = 40, this.color, this.onColorChanged});
+  const ColorSelector({super.key, this.height = 40, this.width = 40, this.color, this.onColorChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,11 @@ class ColorSelector extends StatelessWidget {
         _changeColor(context);
       },
       child: Container(
-        height: this.height,
-        width: this.width,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: this.color,
+            color: color,
             border: Border.all(
               color: Colors.grey,
               width: 1,
@@ -40,7 +41,7 @@ class ColorSelector extends StatelessWidget {
             content: SingleChildScrollView(
               child: ColorPicker(
                 pickerColor: color!,
-                onColorChanged: this.onColorChanged!,
+                onColorChanged: onColorChanged!,
                 showLabel: true,
                 pickerAreaHeightPercent: 0.8,
               ),

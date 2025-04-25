@@ -10,6 +10,8 @@ import 'samples/sample_home.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
 }
 
 class FullSampleHomePage extends StatelessWidget {
+  const FullSampleHomePage({super.key});
+
   Widget _buildButton({String? text, VoidCallback? onClick}) {
     return NeumorphicButton(
       margin: EdgeInsets.only(bottom: 12),
@@ -40,8 +44,8 @@ class FullSampleHomePage extends StatelessWidget {
         //),
         shape: NeumorphicShape.flat,
       ),
-      child: Center(child: Text(text ?? '')),
       onPressed: onClick,
+      child: Center(child: Text(text ?? '')),
     );
   }
 

@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class ButtonSample extends StatefulWidget {
+  const ButtonSample({super.key});
+
   @override
   createState() => _ButtonSampleState();
 }
@@ -51,8 +54,7 @@ class __PageState extends State<_Page> {
               onPressed: () {
                 setState(() {
                   _useDark = !_useDark;
-                  NeumorphicTheme.of(context)!.themeMode =
-                      _useDark ? ThemeMode.dark : ThemeMode.light;
+                  NeumorphicTheme.of(context)!.themeMode = _useDark ? ThemeMode.dark : ThemeMode.light;
                 });
               },
               child: Text("toggle theme"),
@@ -69,7 +71,7 @@ class __PageState extends State<_Page> {
     return Center(
       child: NeumorphicButton(
         onPressed: () {
-          print("click");
+          if (kDebugMode) print("click");
         },
         style: NeumorphicStyle(
           shape: NeumorphicShape.flat,

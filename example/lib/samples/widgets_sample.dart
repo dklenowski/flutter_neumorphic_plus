@@ -1,7 +1,7 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class WidgetsSample extends StatefulWidget {
-  WidgetsSample({Key? key}) : super(key: key);
+  const WidgetsSample({super.key});
 
   @override
   createState() => _ContainersListPageState();
@@ -16,9 +16,9 @@ class _ContainersListPageState extends State<WidgetsSample> {
   bool useDark = false;
 
   Color _textColor() {
-    if (useDark)
+    if (useDark) {
       return Colors.white70;
-    else {
+    } else {
       return Colors.black;
     }
   }
@@ -110,6 +110,13 @@ class _ContainersListPageState extends State<WidgetsSample> {
         ),
         SizedBox(width: 12),
         NeumorphicRadio(
+          value: 1,
+          groupValue: _groupValue,
+          onChanged: (value) {
+            setState(() {
+              _groupValue = value;
+            });
+          },
           child: SizedBox(
             height: 50,
             width: 50,
@@ -120,16 +127,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
               ),
             ),
           ),
-          value: 1,
+        ),
+        SizedBox(width: 12),
+        NeumorphicRadio(
+          value: 2,
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
               _groupValue = value;
             });
           },
-        ),
-        SizedBox(width: 12),
-        NeumorphicRadio(
           child: SizedBox(
             height: 50,
             width: 50,
@@ -140,16 +147,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
               ),
             ),
           ),
-          value: 2,
+        ),
+        SizedBox(width: 12),
+        NeumorphicRadio(
+          value: 3,
           groupValue: _groupValue,
           onChanged: (value) {
             setState(() {
               _groupValue = value;
             });
           },
-        ),
-        SizedBox(width: 12),
-        NeumorphicRadio(
           child: SizedBox(
             height: 50,
             width: 50,
@@ -160,13 +167,6 @@ class _ContainersListPageState extends State<WidgetsSample> {
               ),
             ),
           ),
-          value: 3,
-          groupValue: _groupValue,
-          onChanged: (value) {
-            setState(() {
-              _groupValue = value;
-            });
-          },
         ),
       ],
     );
@@ -375,6 +375,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
                   Stack(
                     children: <Widget>[
                       Neumorphic(
+                        style: NeumorphicStyle(depth: -8),
                         child: AppBar(
                           iconTheme: IconThemeData.fallback(),
                           backgroundColor: Colors.transparent,
@@ -384,7 +385,6 @@ class _ContainersListPageState extends State<WidgetsSample> {
                             style: TextStyle(color: Colors.black),
                           ),
                         ),
-                        style: NeumorphicStyle(depth: -8),
                       ),
                       /*
                       Positioned(

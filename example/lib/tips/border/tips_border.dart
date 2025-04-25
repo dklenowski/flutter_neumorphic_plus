@@ -1,10 +1,10 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class TipsBorderPage extends StatefulWidget {
-  TipsBorderPage({Key? key}) : super(key: key);
+  const TipsBorderPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -147,10 +147,7 @@ class _CustomWidget extends StatefulWidget {
   final NeumorphicStyle firstStyle;
   final NeumorphicStyle secondStyle;
 
-  _CustomWidget(
-      {required this.title,
-      required this.firstStyle,
-      required this.secondStyle});
+  const _CustomWidget({required this.title, required this.firstStyle, required this.secondStyle});
 
   @override
   createState() => _CustomWidgetState();
@@ -193,8 +190,7 @@ Neumorphic(
                 width: 100,
                 child: Text(
                   widget.title,
-                  style: TextStyle(
-                      color: NeumorphicTheme.defaultTextColor(context)),
+                  style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
               Neumorphic(
@@ -223,8 +219,7 @@ Neumorphic(
                 width: 100,
                 child: Text(
                   "opposite\nchild\nlightsource",
-                  style: TextStyle(
-                      color: NeumorphicTheme.defaultTextColor(context)),
+                  style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
               Neumorphic(
@@ -250,6 +245,7 @@ Neumorphic(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

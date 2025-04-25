@@ -1,11 +1,11 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class SliderWidgetPage extends StatefulWidget {
-  SliderWidgetPage({Key? key}) : super(key: key);
+  const SliderWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -121,6 +121,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -199,8 +200,7 @@ Expanded(
             children: <Widget>[
               Text(
                 "Default",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               Expanded(
@@ -222,8 +222,7 @@ Expanded(
               SizedBox(width: 12),
               Text(
                 "${age.round()}",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
             ],
           ),
@@ -232,6 +231,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

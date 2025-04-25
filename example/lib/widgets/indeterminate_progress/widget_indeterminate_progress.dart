@@ -1,11 +1,11 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class IndeterminateProgressWidgetPage extends StatefulWidget {
-  IndeterminateProgressWidgetPage({Key? key}) : super(key: key);
+  const IndeterminateProgressWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -99,6 +99,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -165,8 +166,7 @@ Expanded(
             children: <Widget>[
               Text(
                 "Default",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               Expanded(
@@ -185,6 +185,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -222,8 +223,7 @@ Expanded(
             children: <Widget>[
               Text(
                 "Sized",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               Expanded(
@@ -239,6 +239,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -276,8 +277,7 @@ Expanded(
             children: <Widget>[
               Text(
                 "Duration",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               Expanded(
@@ -293,6 +293,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -341,6 +342,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -389,6 +391,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

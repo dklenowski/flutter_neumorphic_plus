@@ -1,8 +1,10 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
-import 'ThemeColorSelector.dart';
+import 'theme_color_selector.dart';
 
 class ThemeConfigurator extends StatelessWidget {
+  const ThemeConfigurator({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumorphicButton(
@@ -13,9 +15,7 @@ class ThemeConfigurator extends StatelessWidget {
       ),
       child: Icon(
         Icons.settings,
-        color: NeumorphicTheme.isUsingDark(context)
-            ? Colors.white70
-            : Colors.black87,
+        color: NeumorphicTheme.isUsingDark(context) ? Colors.white70 : Colors.black87,
       ),
       onPressed: () {
         _changeColor(context);
@@ -31,7 +31,7 @@ class ThemeConfigurator extends StatelessWidget {
           return AlertDialog(
             title: const Text('Update Theme'),
             content: SingleChildScrollView(
-              child: _ThemeConfiguratorDialog(contextContainingTheme: context),
+              child: _themeConfiguratorDialog(contextContainingTheme: context),
             ),
             actions: <Widget>[
               NeumorphicButton(
@@ -46,16 +46,18 @@ class ThemeConfigurator extends StatelessWidget {
   }
 }
 
-class _ThemeConfiguratorDialog extends StatefulWidget {
+// ignore: camel_case_types
+class _themeConfiguratorDialog extends StatefulWidget {
   final BuildContext contextContainingTheme;
 
-  _ThemeConfiguratorDialog({required this.contextContainingTheme});
+  const _themeConfiguratorDialog({required this.contextContainingTheme});
 
   @override
-  _ThemeConfiguratorState createState() => _ThemeConfiguratorState();
+  _themeConfiguratorState createState() => _themeConfiguratorState();
 }
 
-class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
+// ignore: camel_case_types
+class _themeConfiguratorState extends State<_themeConfiguratorDialog> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -96,7 +98,7 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
         ),
         Padding(
           padding: EdgeInsets.only(right: 12),
-          child: Container(
+          child: SizedBox(
             width: 40,
             child: Text(((intensity * 100).floor() / 100).toString()),
           ),
@@ -131,7 +133,7 @@ class _ThemeConfiguratorState extends State<_ThemeConfiguratorDialog> {
         ),
         Padding(
           padding: EdgeInsets.only(right: 12),
-          child: Container(
+          child: SizedBox(
             width: 40,
             child: Text(depth.floor().toString()),
           ),

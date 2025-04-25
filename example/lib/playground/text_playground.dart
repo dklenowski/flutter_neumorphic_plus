@@ -1,9 +1,13 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:example/lib/color_selector.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class NeumorphicTextPlayground extends StatefulWidget {
+  const NeumorphicTextPlayground({super.key});
+
   @override
-  _NeumorphicPlaygroundState createState() => _NeumorphicPlaygroundState();
+  createState() => _NeumorphicPlaygroundState();
 }
 
 class _NeumorphicPlaygroundState extends State<NeumorphicTextPlayground> {
@@ -48,28 +52,28 @@ class __PageState extends State<_Page> {
     if (displayIcon) {
       return NeumorphicIcon(
         Icons.public,
-        size: this.fontSize,
+        size: fontSize,
         style: NeumorphicStyle(
-          shape: this.shape,
-          intensity: this.intensity,
-          surfaceIntensity: this.surfaceIntensity,
+          shape: shape,
+          intensity: intensity,
+          surfaceIntensity: surfaceIntensity,
           depth: depth,
-          lightSource: this.lightSource,
+          lightSource: lightSource,
         ),
       );
     } else {
       return NeumorphicText(
-        this._textController.text,
+        _textController.text,
         textStyle: NeumorphicTextStyle(
-          fontSize: this.fontSize,
+          fontSize: fontSize,
           fontWeight: _fontWeight(),
         ),
         style: NeumorphicStyle(
-          shape: this.shape,
-          intensity: this.intensity,
-          surfaceIntensity: this.surfaceIntensity,
+          shape: shape,
+          intensity: intensity,
+          surfaceIntensity: surfaceIntensity,
           depth: depth,
-          lightSource: this.lightSource,
+          lightSource: lightSource,
         ),
       );
     }
@@ -86,8 +90,7 @@ class __PageState extends State<_Page> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Padding(
-                  padding:
-                      const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                   child: ElevatedButton(
                     child: Text(
                       "back",
@@ -125,7 +128,7 @@ class __PageState extends State<_Page> {
     final Color buttonInnactiveColor = Colors.white;
 
     final Color textActiveColor = Colors.white;
-    final Color textInactiveColor = Colors.black.withOpacity(0.3);
+    final Color textInactiveColor = Colors.black.opaque(0.3);
 
     return Card(
       margin: EdgeInsets.all(8),
@@ -145,9 +148,7 @@ class __PageState extends State<_Page> {
                     child: Text(
                       "Style",
                       style: TextStyle(
-                        color: selectedConfiguratorIndex == 0
-                            ? textActiveColor
-                            : textInactiveColor,
+                        color: selectedConfiguratorIndex == 0 ? textActiveColor : textInactiveColor,
                       ),
                     ),
                     onPressed: () {
@@ -166,9 +167,7 @@ class __PageState extends State<_Page> {
                     child: Text(
                       "Element",
                       style: TextStyle(
-                        color: selectedConfiguratorIndex == 1
-                            ? textActiveColor
-                            : textInactiveColor,
+                        color: selectedConfiguratorIndex == 1 ? textActiveColor : textInactiveColor,
                       ),
                     ),
                     onPressed: () {
@@ -191,10 +190,8 @@ class __PageState extends State<_Page> {
     switch (selectedConfiguratorIndex) {
       case 0:
         return styleCustomizer();
-        break;
       case 1:
         return elementCustomizer();
-        break;
     }
     return Container();
   }
@@ -228,7 +225,7 @@ class __PageState extends State<_Page> {
     final Color buttonInnactiveColor = Colors.white;
 
     final Color iconActiveColor = Colors.white;
-    final Color iconInactiveColor = Colors.black.withOpacity(0.3);
+    final Color iconInactiveColor = Colors.black.opaque(0.3);
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -243,9 +240,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/concave.png",
-                  color: shape == NeumorphicShape.concave
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.concave ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -259,9 +254,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/convex.png",
-                  color: shape == NeumorphicShape.convex
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.convex ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -275,9 +268,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/flat.png",
-                  color: shape == NeumorphicShape.flat
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.flat ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -298,8 +289,7 @@ class __PageState extends State<_Page> {
         ColorSelector(
           onColorChanged: (color) {
             setState(() {
-              NeumorphicTheme.of(context)!
-                  .updateCurrentTheme(NeumorphicThemeData(baseColor: color));
+              NeumorphicTheme.of(context)!.updateCurrentTheme(NeumorphicThemeData(baseColor: color));
             });
           },
           color: NeumorphicTheme.baseColor(context),
@@ -374,7 +364,7 @@ class __PageState extends State<_Page> {
         ),
         Expanded(
           child: TextField(
-            controller: this._textController,
+            controller: _textController,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
             ),
@@ -415,7 +405,7 @@ class __PageState extends State<_Page> {
   }
 
   FontWeight _fontWeight() {
-    switch (this.fontWeight ~/ 100) {
+    switch (fontWeight ~/ 100) {
       case 1:
         return FontWeight.w100;
       case 2:

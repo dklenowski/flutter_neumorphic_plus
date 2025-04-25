@@ -1,7 +1,11 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:example/lib/color_selector.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class NeumorphicAccessibility extends StatefulWidget {
+  const NeumorphicAccessibility({super.key});
+
   @override
   createState() => _NeumorphicAccessibilityState();
 }
@@ -30,8 +34,7 @@ class _Page extends StatefulWidget {
 class __PageState extends State<_Page> {
   LightSource lightSource = LightSource.topLeft;
   NeumorphicShape shape = NeumorphicShape.flat;
-  NeumorphicBoxShape boxShape =
-      NeumorphicBoxShape.roundRect(BorderRadius.circular(12));
+  NeumorphicBoxShape boxShape = NeumorphicBoxShape.roundRect(BorderRadius.circular(12));
   double depth = 5;
   double intensity = 0.8;
   double surfaceIntensity = 0.5;
@@ -65,8 +68,7 @@ class __PageState extends State<_Page> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Padding(
-                  padding:
-                      const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                   child: ElevatedButton(
                     child: Text(
                       "back",
@@ -104,7 +106,7 @@ class __PageState extends State<_Page> {
     final Color buttonInnactiveColor = Colors.white;
 
     final Color textActiveColor = Colors.white;
-    final Color textInactiveColor = Colors.black.withOpacity(0.3);
+    final Color textInactiveColor = Colors.black.opaque(0.3);
 
     return Card(
       margin: EdgeInsets.all(8),
@@ -124,9 +126,7 @@ class __PageState extends State<_Page> {
                     child: Text(
                       "Style",
                       style: TextStyle(
-                        color: selectedConfiguratorIndex == 0
-                            ? textActiveColor
-                            : textInactiveColor,
+                        color: selectedConfiguratorIndex == 0 ? textActiveColor : textInactiveColor,
                       ),
                     ),
                     onPressed: () {
@@ -145,9 +145,7 @@ class __PageState extends State<_Page> {
                     child: Text(
                       "Element",
                       style: TextStyle(
-                        color: selectedConfiguratorIndex == 1
-                            ? textActiveColor
-                            : textInactiveColor,
+                        color: selectedConfiguratorIndex == 1 ? textActiveColor : textInactiveColor,
                       ),
                     ),
                     onPressed: () {
@@ -166,9 +164,7 @@ class __PageState extends State<_Page> {
                     child: Text(
                       "Border",
                       style: TextStyle(
-                        color: selectedConfiguratorIndex == 2
-                            ? textActiveColor
-                            : textInactiveColor,
+                        color: selectedConfiguratorIndex == 2 ? textActiveColor : textInactiveColor,
                       ),
                     ),
                     onPressed: () {
@@ -191,13 +187,11 @@ class __PageState extends State<_Page> {
     switch (selectedConfiguratorIndex) {
       case 0:
         return styleCustomizer();
-        break;
+
       case 1:
         return elementCustomizer();
-        break;
       case 2:
         return borderCustomizer();
-        break;
     }
     return Container();
   }
@@ -248,8 +242,7 @@ class __PageState extends State<_Page> {
         ColorSelector(
           onColorChanged: (color) {
             setState(() {
-              NeumorphicTheme.of(context)!
-                  .updateCurrentTheme(NeumorphicThemeData(baseColor: color));
+              NeumorphicTheme.of(context)!.updateCurrentTheme(NeumorphicThemeData(baseColor: color));
             });
           },
           color: NeumorphicTheme.baseColor(context),
@@ -289,27 +282,23 @@ class __PageState extends State<_Page> {
       },
       style: NeumorphicStyle(
         boxShape: boxShape,
-        border: NeumorphicBorder(
-            isEnabled: true, width: this.borderWidth, color: this.borderColor),
-        shape: this.shape,
-        intensity: this.intensity,
+        border: NeumorphicBorder(isEnabled: true, width: borderWidth, color: borderColor),
+        shape: shape,
+        intensity: intensity,
         /*
         shadowLightColor: Colors.red,
         shadowDarkColor: Colors.blue,
         shadowLightColorEmboss: Colors.red,
         shadowDarkColorEmboss: Colors.blue,
          */
-        surfaceIntensity: this.surfaceIntensity,
+        surfaceIntensity: surfaceIntensity,
         depth: depth,
-        lightSource: this.lightSource,
+        lightSource: lightSource,
       ),
       child: SizedBox(
         height: height,
         width: width,
-        child: Container(
-          //color: Colors.blue,
-          child: Center(child: Text("")),
-        ),
+        child: Center(child: Text("")),
       ),
     );
   }
@@ -421,8 +410,7 @@ class __PageState extends State<_Page> {
                 setState(() {
                   cornerRadius = value;
                   if (boxShape.isRoundRect) {
-                    boxShape = NeumorphicBoxShape.roundRect(
-                        BorderRadius.circular(this.cornerRadius));
+                    boxShape = NeumorphicBoxShape.roundRect(BorderRadius.circular(cornerRadius));
                   }
                 });
               },
@@ -498,7 +486,7 @@ class __PageState extends State<_Page> {
     final Color buttonInnactiveColor = Colors.white;
 
     final Color iconActiveColor = Colors.white;
-    final Color iconInactiveColor = Colors.black.withOpacity(0.3);
+    final Color iconInactiveColor = Colors.black.opaque(0.3);
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -513,9 +501,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/concave.png",
-                  color: shape == NeumorphicShape.concave
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.concave ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -529,9 +515,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/convex.png",
-                  color: shape == NeumorphicShape.convex
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.convex ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -545,9 +529,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/flat.png",
-                  color: shape == NeumorphicShape.flat
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.flat ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),

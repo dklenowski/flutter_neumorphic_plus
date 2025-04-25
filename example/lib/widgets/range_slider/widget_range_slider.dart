@@ -1,11 +1,11 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class RangeSliderWidgetPage extends StatefulWidget {
-  RangeSliderWidgetPage({Key? key}) : super(key: key);
+  const RangeSliderWidgetPage({super.key});
 
   @override
   createState() => _RangeWidgetPageState();
@@ -135,6 +135,7 @@ class _DefaultWidgetState extends State<_DefaultWidget> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -222,8 +223,7 @@ double highVal = 80;
             children: <Widget>[
               Text(
                 "Default",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               Expanded(
@@ -251,8 +251,7 @@ double highVal = 80;
               SizedBox(width: 12),
               Text(
                 "${lowVal.round()} - ${highVal.round()}",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
             ],
           ),
@@ -261,6 +260,7 @@ double highVal = 80;
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -1,8 +1,10 @@
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class GalaxySample extends StatelessWidget {
+  const GalaxySample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumorphicTheme(
@@ -38,11 +40,7 @@ class _Page extends StatefulWidget {
 class _PageState extends State<_Page> {
   Widget _letter(String letter) {
     return Text(letter,
-        style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Samsung',
-            fontSize: 80));
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontFamily: 'Samsung', fontSize: 80));
   }
 
   Widget _firstBox() {

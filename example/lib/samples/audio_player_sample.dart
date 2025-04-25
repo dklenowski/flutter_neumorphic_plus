@@ -1,8 +1,10 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class AudioPlayerSample extends StatefulWidget {
+  const AudioPlayerSample({super.key});
+
   @override
-  _AudioPlayerSampleState createState() => _AudioPlayerSampleState();
+  createState() => _AudioPlayerSampleState();
 }
 
 class _AudioPlayerSampleState extends State<AudioPlayerSample> {
@@ -17,8 +19,7 @@ class _AudioPlayerSampleState extends State<AudioPlayerSample> {
           lightSource: LightSource.topLeft,
           depth: 10,
         ),
-        darkTheme: neumorphicDefaultDarkTheme.copyWith(
-            defaultTextColor: Colors.white70),
+        darkTheme: neumorphicDefaultDarkTheme.copyWith(defaultTextColor: Colors.white70),
         child: _Page());
   }
 }
@@ -82,8 +83,7 @@ class __PageState extends State<_Page> {
             alignment: Alignment.center,
             child: Text(
               "Now Playing",
-              style:
-                  TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+              style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
             ),
           ),
           Align(
@@ -93,8 +93,7 @@ class __PageState extends State<_Page> {
               onPressed: () {
                 setState(() {
                   _useDark = !_useDark;
-                  NeumorphicTheme.of(context)!.themeMode =
-                      _useDark ? ThemeMode.dark : ThemeMode.light;
+                  NeumorphicTheme.of(context)!.themeMode = _useDark ? ThemeMode.dark : ThemeMode.light;
                 });
               },
               style: NeumorphicStyle(
@@ -117,7 +116,7 @@ class __PageState extends State<_Page> {
       style: NeumorphicStyle(
         boxShape: NeumorphicBoxShape.circle(),
       ),
-      child: Container(
+      child: SizedBox(
           height: 200,
           width: 200,
           child: Image.asset(
@@ -133,17 +132,13 @@ class __PageState extends State<_Page> {
       children: <Widget>[
         Text("Blinding Lights",
             style: TextStyle(
-                fontWeight: FontWeight.w800,
-                fontSize: 34,
-                color: NeumorphicTheme.defaultTextColor(context))),
+                fontWeight: FontWeight.w800, fontSize: 34, color: NeumorphicTheme.defaultTextColor(context))),
         const SizedBox(
           height: 4,
         ),
         Text("The Weeknd",
             style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-                color: NeumorphicTheme.defaultTextColor(context))),
+                fontWeight: FontWeight.w400, fontSize: 14, color: NeumorphicTheme.defaultTextColor(context))),
       ],
     );
   }
@@ -160,15 +155,13 @@ class __PageState extends State<_Page> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "2.00",
-                    style: TextStyle(
-                        color: NeumorphicTheme.defaultTextColor(context)),
+                    style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                   )),
               Align(
                   alignment: Alignment.centerRight,
                   child: Text(
                     "3.14",
-                    style: TextStyle(
-                        color: NeumorphicTheme.defaultTextColor(context)),
+                    style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                   )),
             ],
           ),

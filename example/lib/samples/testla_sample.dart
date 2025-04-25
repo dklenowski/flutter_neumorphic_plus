@@ -2,6 +2,8 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class TeslaSample extends StatefulWidget {
+  const TeslaSample({super.key});
+
   @override
   createState() => _TeslaSampleState();
 }

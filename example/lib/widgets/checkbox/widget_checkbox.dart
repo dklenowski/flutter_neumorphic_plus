@@ -1,11 +1,11 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class CheckboxWidgetPage extends StatefulWidget {
-  CheckboxWidgetPage({Key? key}) : super(key: key);
+  const CheckboxWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -130,6 +130,7 @@ NeumorphicCheckbox(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -225,6 +226,7 @@ NeumorphicCheckbox(
 """);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -300,6 +302,7 @@ NeumorphicCheckbox(
 """);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

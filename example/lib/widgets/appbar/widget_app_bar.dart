@@ -1,7 +1,7 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class AppBarWidgetPage extends StatelessWidget {
-  AppBarWidgetPage({Key? key}) : super(key: key);
+  const AppBarWidgetPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +85,8 @@ class _ThirdThemeWidgetPage extends StatelessWidget {
 }
 
 class AppBarPageUsingTheme extends StatelessWidget {
+  const AppBarPageUsingTheme({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -105,6 +107,8 @@ class AppBarPageUsingTheme extends StatelessWidget {
 }
 
 class SizedAppBarPageUsingTheme extends StatelessWidget {
+  const SizedAppBarPageUsingTheme({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -128,6 +132,8 @@ class SizedAppBarPageUsingTheme extends StatelessWidget {
 }
 
 class FirstThemeContent extends StatelessWidget {
+  const FirstThemeContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -150,7 +156,7 @@ class FirstThemeContent extends StatelessWidget {
 class _MyDrawer extends StatelessWidget {
   final bool isLead;
 
-  const _MyDrawer({Key? key, this.isLead = true}) : super(key: key);
+  const _MyDrawer({this.isLead = true});
 
   @override
   Widget build(BuildContext context) {

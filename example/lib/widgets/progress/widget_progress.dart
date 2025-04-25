@@ -6,7 +6,7 @@ import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'dart:math' show Random;
 
 class ProgressWidgetPage extends StatefulWidget {
-  ProgressWidgetPage({Key? key}) : super(key: key);
+  const ProgressWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -104,6 +104,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -203,6 +204,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -263,6 +265,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -317,6 +320,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -378,6 +382,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

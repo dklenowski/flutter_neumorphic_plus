@@ -1,9 +1,9 @@
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class IconWidgetPage extends StatefulWidget {
-  IconWidgetPage({Key? key}) : super(key: key);
+  const IconWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -44,8 +44,7 @@ class _PageState extends State<_Page> {
         ),
         backgroundColor: Colors.transparent,
         body: GridView.builder(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
           itemCount: icons.length,
           itemBuilder: (context, index) {
             return Padding(

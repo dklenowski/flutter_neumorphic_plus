@@ -5,6 +5,8 @@ import 'border/tips_border.dart';
 import 'border/tips_emboss_inside_emboss.dart';
 
 class TipsHome extends StatelessWidget {
+  const TipsHome({super.key});
+
   Widget _buildButton({String? text, VoidCallback? onClick}) {
     return NeumorphicButton(
       margin: EdgeInsets.only(bottom: 12),
@@ -18,8 +20,8 @@ class TipsHome extends StatelessWidget {
           BorderRadius.circular(12),
         ),
       ),
-      child: Center(child: Text(text ?? '')),
       onPressed: onClick,
+      child: Center(child: Text(text ?? '')),
     );
   }
 

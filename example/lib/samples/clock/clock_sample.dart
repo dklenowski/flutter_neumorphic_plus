@@ -4,6 +4,8 @@ import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'clock_second_sample.dart';
 
 class ClockSample extends StatelessWidget {
+  const ClockSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumorphicTheme(
@@ -73,10 +75,6 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
                     ),
                     child: NeumorphicButton(
                       padding: EdgeInsets.all(12.0),
-                      child: Icon(
-                        Icons.add,
-                        color: Color(0xFFC1CDE5),
-                      ),
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
@@ -87,6 +85,10 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
                           depth: -1,
                           boxShape: NeumorphicBoxShape.roundRect(
                               BorderRadius.circular(8))),
+                      child: Icon(
+                        Icons.add,
+                        color: Color(0xFFC1CDE5),
+                      ),
                     ),
                   ),
                 ),
@@ -127,6 +129,8 @@ class _ClockFirstPageState extends State<_ClockFirstPage> {
 }
 
 class NeumorphicClock extends StatelessWidget {
+  const NeumorphicClock({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -270,6 +274,8 @@ class NeumorphicClock extends StatelessWidget {
 class NeumorphicSelector extends StatelessWidget {
   final double _elementHeight = 14;
   final double _spacing = 10;
+
+  const NeumorphicSelector({super.key});
 
   Widget _buildSimpleButton(BuildContext context) {
     return Neumorphic(

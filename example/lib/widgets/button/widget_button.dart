@@ -1,11 +1,11 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class ButtonWidgetPage extends StatefulWidget {
-  ButtonWidgetPage({Key? key}) : super(key: key);
+  const ButtonWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -106,6 +106,7 @@ NeumorphicButton(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -162,6 +163,7 @@ NeumorphicButton(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -220,6 +222,7 @@ NeumorphicButton(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -282,6 +285,7 @@ NeumorphicButton(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -332,7 +336,7 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
   }
 
   Widget _buildCode(BuildContext context) {
-    return Code("""    
+    return Code("""
 NeumorphicButton(
      isEnabled: false,
      child: Text("Second"),
@@ -343,6 +347,7 @@ NeumorphicButton(
 """);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -382,14 +387,13 @@ NeumorphicButton(
             children: <Widget>[
               Text(
                 "Duration",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               NeumorphicButton(
                 onPressed: () {},
-                child: Text("Press me all night long"),
                 duration: Duration(seconds: 1),
+                child: Text("Press me all night long"),
               ),
               SizedBox(width: 12),
             ],
@@ -399,6 +403,7 @@ NeumorphicButton(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -441,12 +446,11 @@ NeumorphicButton(
           SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
                   "Flat",
-                  style: TextStyle(
-                      color: NeumorphicTheme.defaultTextColor(context)),
+                  style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
               SizedBox(width: 12),
@@ -466,12 +470,11 @@ NeumorphicButton(
           SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
                   "Concave",
-                  style: TextStyle(
-                      color: NeumorphicTheme.defaultTextColor(context)),
+                  style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
               SizedBox(width: 12),
@@ -491,19 +494,16 @@ NeumorphicButton(
           SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
                   "Convex",
-                  style: TextStyle(
-                      color: NeumorphicTheme.defaultTextColor(context)),
+                  style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
               SizedBox(width: 12),
               NeumorphicButton(
-                style: NeumorphicStyle(
-                    shape: NeumorphicShape.convex,
-                    boxShape: NeumorphicBoxShape.circle()),
+                style: NeumorphicStyle(shape: NeumorphicShape.convex, boxShape: NeumorphicBoxShape.circle()),
                 onPressed: () {
                   setState(() {});
                 },
@@ -517,6 +517,7 @@ NeumorphicButton(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

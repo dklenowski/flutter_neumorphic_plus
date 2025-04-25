@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 import 'main_home.dart';
@@ -5,6 +6,8 @@ import 'main_home.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -28,8 +31,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: NeumorphicFloatingActionButton(
@@ -43,7 +47,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             NeumorphicButton(
               onPressed: () {
-                print("onClick");
+                if (kDebugMode) print("onClick");
               },
               style: NeumorphicStyle(
                 shape: NeumorphicShape.flat,
@@ -59,14 +63,11 @@ class MyHomePage extends StatelessWidget {
                 margin: EdgeInsets.only(top: 12),
                 onPressed: () {
                   NeumorphicTheme.of(context)!.themeMode =
-                      NeumorphicTheme.isUsingDark(context)
-                          ? ThemeMode.light
-                          : ThemeMode.dark;
+                      NeumorphicTheme.isUsingDark(context) ? ThemeMode.light : ThemeMode.dark;
                 },
                 style: NeumorphicStyle(
                   shape: NeumorphicShape.flat,
-                  boxShape:
-                      NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
+                  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
                 ),
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
@@ -76,15 +77,13 @@ class MyHomePage extends StatelessWidget {
             NeumorphicButton(
                 margin: EdgeInsets.only(top: 12),
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushReplacement(MaterialPageRoute(builder: (context) {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
                     return FullSampleHomePage();
                   }));
                 },
                 style: NeumorphicStyle(
                   shape: NeumorphicShape.flat,
-                  boxShape:
-                      NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
+                  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
                   //border: NeumorphicBorder()
                 ),
                 padding: const EdgeInsets.all(12.0),

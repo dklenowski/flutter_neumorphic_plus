@@ -1,10 +1,10 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class TipsRecursiveeEmbossPage extends StatefulWidget {
-  TipsRecursiveeEmbossPage({Key? key}) : super(key: key);
+  const TipsRecursiveeEmbossPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -86,10 +86,7 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
 """);
   }
 
-  Widget _generateEmbosss(
-      {required int number,
-      required Widget child,
-      bool reverseEachPair = false}) {
+  Widget _generateEmbosss({required int number, required Widget child, bool reverseEachPair = false}) {
     Widget element = child;
     for (int i = 0; i < number; ++i) {
       element = Neumorphic(
@@ -119,8 +116,7 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
                     margin: EdgeInsets.only(left: 12, right: 12),
                     child: Text(
                       "Recursive Emboss",
-                      style: TextStyle(
-                          color: NeumorphicTheme.defaultTextColor(context)),
+                      style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                     ),
                   ),
                   _generateEmbosss(
@@ -140,8 +136,7 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
                     margin: EdgeInsets.only(left: 12, right: 12),
                     child: Text(
                       "Each pair number\nLightsource is reversed",
-                      style: TextStyle(
-                          color: NeumorphicTheme.defaultTextColor(context)),
+                      style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                     ),
                   ),
                   _generateEmbosss(
@@ -166,8 +161,7 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
                     margin: EdgeInsets.only(left: 12, right: 12),
                     child: Text(
                       "Recursive Emboss",
-                      style: TextStyle(
-                          color: NeumorphicTheme.defaultTextColor(context)),
+                      style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                     ),
                   ),
                   _generateEmbosss(
@@ -187,8 +181,7 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
                     margin: EdgeInsets.only(left: 12, right: 12),
                     child: Text(
                       "Each pair number\nLightsource is reversed",
-                      style: TextStyle(
-                          color: NeumorphicTheme.defaultTextColor(context)),
+                      style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
                     ),
                   ),
                   _generateEmbosss(
@@ -208,6 +201,7 @@ class _EmbossmbossWidgetState extends State<_EmbossmbossWidget> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

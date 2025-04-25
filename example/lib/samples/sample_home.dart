@@ -11,6 +11,8 @@ import 'galaxy_sample.dart';
 import 'widgets_sample.dart';
 
 class SamplesHome extends StatelessWidget {
+  const SamplesHome({super.key});
+
   Widget _buildButton({String? text, VoidCallback? onClick}) {
     return NeumorphicButton(
       margin: EdgeInsets.only(bottom: 12),
@@ -24,8 +26,8 @@ class SamplesHome extends StatelessWidget {
           BorderRadius.circular(12),
         ),
       ),
-      child: Center(child: Text(text ?? '')),
       onPressed: onClick,
+      child: Center(child: Text(text ?? '')),
     );
   }
 

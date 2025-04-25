@@ -1,5 +1,5 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/color_selector.dart';
 import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
@@ -7,7 +7,7 @@ import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'dart:math' show Random;
 
 class IndicatorWidgetPage extends StatefulWidget {
-  IndicatorWidgetPage({Key? key}) : super(key: key);
+  const IndicatorWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -113,6 +113,7 @@ NeumorphicIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -163,6 +164,7 @@ NeumorphicIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -231,8 +233,7 @@ NeumorphicIndicator(
             children: <Widget>[
               Text(
                 "Colorized",
-                style:
-                    TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
+                style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
               SizedBox(width: 12),
               NeumorphicIndicator(
@@ -250,6 +251,7 @@ NeumorphicIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -309,6 +311,7 @@ NeumorphicIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -349,11 +352,7 @@ NeumorphicIndicator(
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
           SizedBox(width: 12),
-          NeumorphicIndicator(
-              height: 100,
-              width: 20,
-              percent: percent,
-              curve: Curves.bounceOut),
+          NeumorphicIndicator(height: 100, width: 20, percent: percent, curve: Curves.bounceOut),
           SizedBox(width: 12),
           TextButton(
               child: Text('Update'),
@@ -367,6 +366,7 @@ NeumorphicIndicator(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

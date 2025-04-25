@@ -1,10 +1,14 @@
+// ignore_for_file: unused_local_variable, unnecessary_this, avoid_unnecessary_containers
+
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 void main() => runApp(NeumorphicPlayground());
 
 class NeumorphicPlayground extends StatefulWidget {
+  const NeumorphicPlayground({super.key});
+
   @override
-  _NeumorphicPlaygroundState createState() => _NeumorphicPlaygroundState();
+  createState() => _NeumorphicPlaygroundState();
 }
 
 class _NeumorphicPlaygroundState extends State<NeumorphicPlayground> {
@@ -32,8 +36,7 @@ class _Page extends StatefulWidget {
 class __PageState extends State<_Page> {
   LightSource lightSource = LightSource.topLeft;
   NeumorphicShape shape = NeumorphicShape.flat;
-  NeumorphicBoxShape boxShape =
-      NeumorphicBoxShape.roundRect(BorderRadius.circular(12));
+  NeumorphicBoxShape boxShape = NeumorphicBoxShape.roundRect(BorderRadius.circular(12));
 
   double depth = 5;
   double intensity = 0.5;
@@ -87,7 +90,7 @@ class __PageState extends State<_Page> {
     final Color buttonInnactiveColor = Colors.white;
 
     final Color textActiveColor = Colors.white;
-    final Color textInactiveColor = Colors.black.withOpacity(0.3);
+    final Color textInactiveColor = Colors.black.opaque(0.3);
 
     return Column(
       children: <Widget>[
@@ -248,7 +251,7 @@ class __PageState extends State<_Page> {
     final Color buttonInnactiveColor = Colors.white;
 
     final Color iconActiveColor = Colors.white;
-    final Color iconInactiveColor = Colors.black.withOpacity(0.3);
+    final Color iconInactiveColor = Colors.black.opaque(0.3);
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -263,9 +266,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/concave.png",
-                  color: shape == NeumorphicShape.concave
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.concave ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -279,9 +280,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/convex.png",
-                  color: shape == NeumorphicShape.convex
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.convex ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),
@@ -295,9 +294,7 @@ class __PageState extends State<_Page> {
                 });
               },
               child: Image.asset("assets/images/flat.png",
-                  color: shape == NeumorphicShape.flat
-                      ? iconActiveColor
-                      : iconInactiveColor),
+                  color: shape == NeumorphicShape.flat ? iconActiveColor : iconInactiveColor),
             ),
           ),
         ),

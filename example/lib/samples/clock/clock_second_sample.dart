@@ -2,6 +2,8 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class ClockAlarmPage extends StatelessWidget {
+  const ClockAlarmPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return NeumorphicTheme(
@@ -94,14 +96,14 @@ class _ClockPageState extends State<_Page> {
                     ),
                     child: NeumorphicButton(
                       padding: EdgeInsets.all(12.0),
-                      child: Icon(
-                        Icons.add,
-                        color: Color(0xFFC1CDE5),
-                      ),
                       style: NeumorphicStyle(
                         depth: -1,
                         boxShape: NeumorphicBoxShape.roundRect(
                             BorderRadius.circular(8)),
+                      ),
+                      child: Icon(
+                        Icons.add,
+                        color: Color(0xFFC1CDE5),
                       ),
                     ),
                   ),
@@ -116,7 +118,7 @@ class _ClockPageState extends State<_Page> {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return AlarmCell(this.items[index]);
+                return AlarmCell(items[index]);
               },
               itemCount: items.length,
             ),
@@ -130,7 +132,7 @@ class _ClockPageState extends State<_Page> {
 class AlarmCell extends StatelessWidget {
   final Alarm alarm;
 
-  AlarmCell(this.alarm);
+  const AlarmCell(this.alarm, {super.key});
 
   @override
   Widget build(BuildContext context) {

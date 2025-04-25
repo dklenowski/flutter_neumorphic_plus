@@ -1,10 +1,11 @@
 import 'package:example/lib/Code.dart';
-import 'package:example/lib/ThemeConfigurator.dart';
+import 'package:example/lib/theme_configurator.dart';
 import 'package:example/lib/top_bar.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class ToggleWidgetPage extends StatefulWidget {
-  ToggleWidgetPage({Key? key}) : super(key: key);
+  const ToggleWidgetPage({super.key});
 
   @override
   createState() => _WidgetPageState();
@@ -163,14 +164,13 @@ Expanded(
               ],
               thumb: Neumorphic(
                 style: NeumorphicStyle(
-                  boxShape: NeumorphicBoxShape.roundRect(
-                      BorderRadius.all(Radius.circular(12))),
+                  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(12))),
                 ),
               ),
               onChanged: (value) {
                 setState(() {
                   _selectedIndex = value;
-                  print("_firstSelected: $_selectedIndex");
+                  if (kDebugMode) print("_firstSelected: $_selectedIndex");
                 });
               },
             ),
@@ -180,6 +180,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -273,13 +274,13 @@ NeumorphicToggle(
               if (value == 0) {
                 // Scaffold.of(context)
                 //     .showSnackBar(SnackBar(content: Text('on back !')));
-                print("onAnimationChangedFinished: $_selectedIndex");
+                if (kDebugMode) print("onAnimationChangedFinished: $_selectedIndex");
               }
             },
             onChanged: (value) {
               setState(() {
                 _selectedIndex = value;
-                print("_firstSelected: $_selectedIndex");
+                if (kDebugMode) print("_firstSelected: $_selectedIndex");
               });
             },
           ),
@@ -288,6 +289,7 @@ NeumorphicToggle(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
