@@ -84,7 +84,7 @@ class __PageContentState extends State<_PageContent> {
                         gradient: LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
-                            colors: [Colors.purple.opaque(0.5), Colors.red.opaque(0.5)])),
+                            colors: [Colors.purple.withOp(0.5), Colors.red.withOp(0.5)])),
                   ),
                 ),
                 Stack(
@@ -104,14 +104,14 @@ class __PageContentState extends State<_PageContent> {
                           ),
                           Text(
                             "1234 5678",
-                            style: TextStyle(fontSize: 30, color: Colors.black.opaque(0.7)),
+                            style: TextStyle(fontSize: 30, color: Colors.black.withOp(0.7)),
                           ),
                           SizedBox(
                             height: 3,
                           ),
                           Text(
                             "1234 5678",
-                            style: TextStyle(fontSize: 30, color: Colors.black.opaque(0.7)),
+                            style: TextStyle(fontSize: 30, color: Colors.black.withOp(0.7)),
                           ),
                         ],
                       ),
@@ -141,7 +141,7 @@ class __PageContentState extends State<_PageContent> {
                         children: <Widget>[
                           Text(
                             "09/24",
-                            style: TextStyle(fontSize: 20, color: Colors.white.opaque(0.7)),
+                            style: TextStyle(fontSize: 20, color: Colors.white.withOp(0.7)),
                           ),
                           SizedBox(
                             height: 8,

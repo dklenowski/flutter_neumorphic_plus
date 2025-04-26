@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_neumorphic_plus/src/widget/container.dart';
 
 extension ColorExtension on Color {
-  Color opaque(double opacity) {
+  withOp(double opacity) {
     assert(opacity >= 0 && opacity <= 1, 'Opacity must be between 0 and 1');
 
     int opacityInt = (opacity * 255).round();

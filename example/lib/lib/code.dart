@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, file_names
 
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
@@ -11,10 +11,10 @@ class Code extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8),
-      color: Colors.grey.opaque(0.2),
+      color: Colors.grey.withOp(0.2),
       child: Text(
         text,
-        style: TextStyle(color: Colors.black.opaque(0.8)),
+        style: TextStyle(color: Colors.black.withOp(0.8)),
       ),
     );
   }
